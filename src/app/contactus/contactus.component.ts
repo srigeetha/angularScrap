@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { StateService } from '@uirouter/core';
 
 
-import  { valid } from "../../assets/scripts/validation";
+import { valid } from "../../assets/scripts/validation";
 
 @Component({
   selector: 'app-contactus',
@@ -15,16 +15,12 @@ export class ContactusComponent implements OnInit {
   constructor(public $state: StateService) { }
   handleClick() {
 
-   if(valid()){
-    this.$state.go('dashboard');
-   }
+    if (valid()) {
+      this.$state.go('dashboard');
+    }
   }
+ngOnInit() {
 
-    this.$state.go('dashboard');
-  }
-
-  ngOnInit() {
-
-  }
+}
 
 }

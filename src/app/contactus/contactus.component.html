@@ -1,26 +1,29 @@
-<form name="myForm" >
+<form name="myForm">
     <table>
         <tr>
             <td>Email:</td>
-
-            <td><input type="text" id="uname"/></td>
-
-            <td><input type="text" name="uname" id="uname"/></td>
-
-            <td><span id="err1"></span></td>
+            <td>
+                <input type="text" id="uname" />
+            </td>
+            <td>
+                <input type="text" name="uname" id="uname" />
+            </td>
+            <td>
+                <span id="err1"></span>
+            </td>
         </tr>
         <tr>
             <td>Password:</td>
-            <td><input type="password" id="pwd"/></td>
-            <td><span id="err2"></span></td>
+            <td>
+                <input type="password" id="pwd" />
+            </td>
+            <td>
+                <span id="err2"></span>
+            </td>
         </tr>
         <tr>
-
-          <a (click)="handleClick()">Submit </a >  
-
-          <button type="submit"  onclick="return valid()" (click)="handleClick()">Submit </button>  
-
+            <a (click)="handleClick()">
+            Submit </a>
         </tr>
     </table>
 </form>
-
