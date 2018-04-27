@@ -22,7 +22,11 @@
         "styles.css"
       ],
       "scripts": [
+<<<<<<< HEAD
         "../src/assets/scripts/validation.js"
+=======
+        "../src/app/scriptFiles/validation.js"
+>>>>>>> 75c4901c1d0c3ac633ff23e265fb040784638f7a
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
