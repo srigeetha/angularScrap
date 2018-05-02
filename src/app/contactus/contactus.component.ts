@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { StateService } from '@uirouter/core';
 
-
 import { valid } from "../../assets/scripts/validation";
 
 @Component({
@@ -13,14 +12,12 @@ import { valid } from "../../assets/scripts/validation";
 export class ContactusComponent implements OnInit {
 
   constructor(public $state: StateService) { }
-  handleClick() {
 
+  handleClick() {
     if (valid()) {
+
       this.$state.go('dashboard');
     }
   }
-ngOnInit() {
-
-}
-
+ngOnInit() {}
 }

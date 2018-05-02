@@ -1,35 +1,39 @@
-<ul class="nav nav-tabs">
-    <li class="nav-item">
+
+<div class="row">
+<nav class="navbar navbar-expand-lg navbar-fixed col-md-2 bg-light">
+  <div class="collapse navbar-collapse" >
+    <ul class="navbar navbar-nav">
+      <li>
         <a uiSref="aboutus" uiSrefActive="active">AboutUs</a>
-    </li>
-    <li class="nav-item">
-        <a uiSref="contactus" uiSrefActive="active">Contact Us</a>
-    </li>
-</ul>
-<ui-view></ui-view>
-
-<!-- <div class="container">class="nav-link active" 
-    <div class="jumbotron">
-        <h1>welcome</h1>
-        <h2>Angular and bootstrap</h2> 
-    </div> -->
-<!-- <div class="card">
-        <div class="card-title">
-           
-          
+      </li>
+      <li>
+        <button type="button" class="btn btn-button" (click)="isCollapsed = !isCollapsed">Collapse</button>
+      </li>
+      <li>
+        <div class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-danger dropdown-toggle">
+            Dropdown
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li>
+              <a uiSref="aboutus" uiSrefActive="active">AboutUs</a>
+            </li>
+            <li class="divider dropdown-divider"></li>
+            <li>
+              <a uiSref="dashboard" uiSrefActive="active">Dashboard</a>
+            </li>
+          </ul>
         </div>
-        <div class="card-body">
-            <router-outlet></router-outlet>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </li>
+      <li><a uiSref="contactus" uiSrefActive="active">ContactUs</a></li>
+    </ul>
+  </div>
+</nav>
 
-    </div>
-  </div> -->
-<!-- <div class="chip">
-        <img src="logo1.png" alt="Person" width="96" height="96">
-        John Doe
-        <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-      </div>
-  <div class="alert alert-warning" role="alert">
-    This is a warning alert—check it out!
-    <span class="closebtn" styles="align:'right'" onclick="this.parentElement.style.display='none'">&times;</span>
-  </div> -->
+<div class="container col-md-8">
+  <ui-view></ui-view>
+  <div [collapse]="isCollapsed" class="card card-block card-header">
+    Some content
+  </div>
+</div>
+</div>
