@@ -7,8 +7,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BsDropdownModule,AlertModule,BsDatepickerModule,CollapseModule } from 'ngx-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +20,9 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     BrowserModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    AlertModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

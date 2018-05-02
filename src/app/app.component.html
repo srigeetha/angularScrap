@@ -26,14 +26,24 @@
         </div>
       </li>
       <li><a uiSref="contactus" uiSrefActive="active">ContactUs</a></li>
+      <li>
+          <button class="btn btn-success" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen">Date Picker</button>
+      </li>
     </ul>
   </div>
 </nav>
 
 <div class="container col-md-8">
   <ui-view></ui-view>
-  <div [collapse]="isCollapsed" class="card card-block card-header">
-    Some content
-  </div>
+  <alert type="success" [collapse]="isCollapsed">
+      <strong>Well done!</strong> You successfully read this important alert message.
+  </alert>        
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+      <input type="text"
+             class="form-control"
+             #dp="bsDatepicker"
+             bsDatepicker
+             [bsValue]="bsValue">
+    </div>
 </div>
 </div>
