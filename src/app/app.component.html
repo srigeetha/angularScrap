@@ -1,49 +1,54 @@
-
 <div class="row">
-<nav class="navbar navbar-expand-lg navbar-fixed col-md-2 bg-light">
-  <div class="collapse navbar-collapse" >
-    <ul class="navbar navbar-nav">
-      <li>
-        <a uiSref="aboutus" uiSrefActive="active">AboutUs</a>
-      </li>
-      <li>
-        <button type="button" class="btn btn-button" (click)="isCollapsed = !isCollapsed">Collapse</button>
-      </li>
-      <li>
-        <div class="btn-group" dropdown>
-          <button dropdownToggle type="button" class="btn btn-danger dropdown-toggle">
-            Dropdown
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li>
-              <a uiSref="aboutus" uiSrefActive="active">AboutUs</a>
-            </li>
-            <li class="divider dropdown-divider"></li>
-            <li>
-              <a uiSref="dashboard" uiSrefActive="active">Dashboard</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li><a uiSref="contactus" uiSrefActive="active">ContactUs</a></li>
-      <li>
-          <button class="btn btn-success" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen">Date Picker</button>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container col-md-8">
-  <ui-view></ui-view>
-  <alert type="success" [collapse]="isCollapsed">
-      <strong>Well done!</strong> You successfully read this important alert message.
-  </alert>        
-  <div class="col-xs-12 col-12 col-md-4 form-group">
-      <input type="text"
-             class="form-control"
-             #dp="bsDatepicker"
-             bsDatepicker
-             [bsValue]="bsValue">
+  <nav class="navbar navbar-fixed col-md-2 bg-light">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar navbar-nav">
+        <li>
+          <a uiSref="aboutus" uiSrefActive="active">AboutUs</a>
+        </li>
+        <li>
+          <br>
+          <button type="button" class="btn btn-primary" (click)="open = !open">Alert Collapse</button>
+        </li>
+        <li>
+          <br>
+          <button type="button" class="btn btn-primary" (click)="staticModal.show()">Static modal</button>
+        </li>
+        <li>
+          <br>
+          <a uiSref="contactus" uiSrefActive="active">ContactUs</a>
+        </li>
+        <li>
+          <br>
+          <button class="btn btn-primary" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen">Date Picker</button>
+        </li>
+      </ul>
     </div>
-</div>
+  </nav>
+
+  <div class="container col-md-8">
+    <ui-view></ui-view>
+    <alert type="success" [isOpen]="open">
+      <strong>Well done!</strong> You successfully read this important alert message.
+    </alert>
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      Date Picker:
+      <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker>
+    </div>
+    <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 id="dialog-static-name" class="modal-title pull-left">Static modal {{title}}</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            This is static modal, backdrop click will not close it. Click
+            <b>&times;</b> to close modal.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

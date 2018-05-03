@@ -22,8 +22,7 @@
         "styles.scss"
       ],
       "scripts": [
-		"../src/assets/scripts/validation.js"
-
+        "../src/assets/scripts/validation.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -58,6 +57,7 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "component": {
+    }
   }
 }
