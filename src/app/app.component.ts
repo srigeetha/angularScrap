@@ -95,7 +95,18 @@ export class AppComponent {
     this.returnedArray = this.contentArray.slice(startItem, endItem);
   }
   //rating
-  max: number = 10;
-  rate: number = 7;
-  isReadonly: boolean = true;
+  max = 10;
+  rate = 7;
+  isReadonly = false;
+  show: boolean = true;
+ 
+  confirmSelection(event: KeyboardEvent) {
+    if (event.keyCode === 13) {
+      this.isReadonly = true;
+    }
+  }
+  resetStars() {
+    this.rate = 0;
+    this.isReadonly = false;
+  }
 }

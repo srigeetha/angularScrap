@@ -54,7 +54,7 @@
 
   <div class="container col-md-8">
     <ui-view></ui-view>
-    <accordion>
+    <accordion >
       <accordion-group heading="Accordion First Header {{isOpen}}" [isOpen]="isOpen">
         <div>{{items[0]}}</div>
       </accordion-group>
@@ -91,6 +91,12 @@
       <input [(ngModel)]="selected" [typeahead]="states" class="form-control">
     </div>
     <br>
+    <div>
+      <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating>
+      <div class="card">
+          <pre class="card-block card-header" style="margin:15px 0;">Rate: <b>{{rate}}</b> </pre>
+      </div>
+    </div>
     <div>
       Timepicker:
       <timepicker [(ngModel)]="mytime"></timepicker>

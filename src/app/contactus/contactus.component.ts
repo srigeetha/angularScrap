@@ -11,11 +11,12 @@ import { valid } from "../../assets/scripts/validation";
 })
 export class ContactusComponent implements OnInit {
 
+
   constructor(public $state: StateService) { }
 
   handleClick() {
     if (valid()) {
-
+      
       this.$state.go('dashboard');
     }
   }
