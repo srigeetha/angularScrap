@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { UIRouterModule } from '@uirouter/angular';
-import { ContactusComponent } from './contactus/contactus.component';
+import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { AlertComponent } from './alert/alert.component';
@@ -23,7 +23,7 @@ import { TypeaheadComponent } from './typeahead/typeahead.component';
 @NgModule({
   imports: [UIRouterModule.forRoot({
     states: [
-      { name: "contactus", url: "/contactus", component: ContactusComponent },
+      { name: "login", url: "/login", component: LoginComponent },
       { name: "dashboard", url: "/dashboard", component: DashboardComponent },
       { name: "accordion", url: "/accordion", component: AccordionComponent },
       { name: "alert", url: "/alert", component: AlertComponent },

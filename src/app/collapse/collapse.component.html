@@ -1,3 +1,7 @@
-<p>
-  collapse works!
-</p>
+<button type="button" class="btn btn-primary"
+        (click)="open = !open">Toggle collapse
+</button>
+<hr>
+<div [collapse]="open" class="card card-block card-header">
+  <div class="well well-lg">Some content</div>
+</div>

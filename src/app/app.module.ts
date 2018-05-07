@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ContactusComponent } from './contactus/contactus.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccordionComponent } from './accordion/accordion.component';
@@ -22,10 +21,12 @@ import { TabsComponent } from './tabs/tabs.component';
 import { TimepickerComponent } from './timepicker/timepicker.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
+import {UIRouterModule} from "@uirouter/angular";
 
 import {
   AccordionModule,
   BsDropdownModule, 
+  CollapseModule,
   AlertModule, 
   ProgressbarModule, 
   RatingModule, 
@@ -40,11 +41,11 @@ import {
   TabsModule, 
   TimepickerModule
 } from 'ngx-bootstrap';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactusComponent,
     DashboardComponent,
     AccordionComponent,
     AlertComponent,
@@ -62,13 +63,15 @@ import {
     TabsComponent,
     TimepickerComponent,
     TooltipComponent,
-    TypeaheadComponent
+    TypeaheadComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
+    CollapseModule.forRoot(),
     AlertModule.forRoot(),
     BsDatepickerModule.forRoot(),
     ModalModule.forRoot(),
