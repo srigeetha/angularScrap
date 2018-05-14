@@ -1,18 +1,38 @@
-<div class="card">
+<div class="card" [collapse]="isCollapsed">
   <div class="card-header">
     Login page
   </div>
   <div class="card-body">
     <form id="myForm">
       <td>
-        <tr><th>EmailId:</th><th><input name="myInput" [(ngModel)]="myInput" id="username"></th></tr>
-        <tr><th></th><th><span id="err1"></span></th></tr>
-        <tr><th>Password:</th><th><input type="password" name="pwd"></th></tr>
-        <tr><th></th><th><span id="err2"></span></th></tr>
         <tr>
-          <a (click)="handleClick()">Submit</a>
-      </tr>
-      </td>    
+          <th>EmailId:</th>
+          <th>
+            <input name="myInput" [(ngModel)]="myInput" id="username">
+          </th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>
+            <span id="err1"></span>
+          </th>
+        </tr>
+        <tr>
+          <th>Password:</th>
+          <th>
+            <input type="password" name="pwd">
+          </th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>
+            <span id="err2"></span>
+          </th>
+        </tr>
+        <tr>
+          <button class="btn btn-primary" (click)="handleClick(); isCollapsed = !isCollapsed">Submit</button>
+        </tr>
+      </td>
     </form>
-  </div> 
+  </div>
 </div>

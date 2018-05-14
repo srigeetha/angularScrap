@@ -42,6 +42,7 @@ import {
   TimepickerModule
 } from 'ngx-bootstrap';
 import { LoginComponent } from './login/login.component';
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { LoginComponent } from './login/login.component';
     TimepickerComponent,
     TooltipComponent,
     TypeaheadComponent,
-    LoginComponent
+    LoginComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
