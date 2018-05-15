@@ -23,7 +23,7 @@ import { TypeaheadComponent } from './typeahead/typeahead.component';
 @NgModule({
   imports: [UIRouterModule.forRoot({
     states: [
-      { name: "login", url: "/login", component: LoginComponent },
+      { name: "#", url: "/", component: LoginComponent },
       { name: "dashboard", url: "/dashboard", component: DashboardComponent },
       { name: "dashboard.accordion", url: "/accordion", component: AccordionComponent },
       { name: "dashboard.alert", url: "/alert", component: AlertComponent },

@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
   constructor(public $state: StateService) { }
 
   handleClick() {
-    this.$state.go('dashboard');
+    this.$state.go('dashboard.accordion');
   }
   ngOnInit() {
   }
