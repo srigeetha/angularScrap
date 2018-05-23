@@ -22,7 +22,9 @@ import { TimepickerComponent } from './timepicker/timepicker.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
 import {UIRouterModule} from "@uirouter/angular";
-
+import { DataService } from './dataservices/dataservice.service';
+import { HttpClientModule, } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import {
   AccordionModule,
   BsDropdownModule, 
@@ -87,9 +89,11 @@ import { DisplayComponent } from './display/display.component';
     TabsModule.forRoot(),
     TimepickerModule.forRoot(),
     TooltipModule.forRoot(),
-    TypeaheadModule.forRoot()
+    TypeaheadModule.forRoot(),
+    HttpClientModule,
+    HttpModule 
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 
 })

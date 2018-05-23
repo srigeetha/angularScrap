@@ -58,6 +58,13 @@
 
   <div class="container col-md-8">
     <ui-view></ui-view>
+    <div >
+      <ul>
+        <li *ngFor="let hero of result">
+          {{ hero.userid }}
+        </li>
+      </ul>
+    </div>
   </div>
 
 </div>

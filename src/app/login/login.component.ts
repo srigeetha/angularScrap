@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '@uirouter/core';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,10 +7,13 @@ import { StateService } from '@uirouter/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public $state: StateService) { }
+  constructor(public $state: StateService) {
+   
+   }
 
   handleClick() {
     this.$state.go('dashboard.accordion');
+
   }
   ngOnInit() {
   }
