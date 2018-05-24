@@ -2,6 +2,9 @@
   
   <nav class="navbar navbar-fixed col-md-2 bg-light">
     <ul class="navbar navbar-nav">
+        <li>
+            <button type="button" uiSref="dashboard.display" class="btn btn-primary">Display</button>
+          </li>
       <li>
         <button type="button" uiSref="dashboard.accordion" class="btn btn-primary">Accordion</button>
       </li>
@@ -58,13 +61,6 @@
 
   <div class="container col-md-8">
     <ui-view></ui-view>
-    <div >
-      <ul>
-        <li *ngFor="let hero of result">
-          {{ hero.userid }}
-        </li>
-      </ul>
-    </div>
   </div>
 
 </div>

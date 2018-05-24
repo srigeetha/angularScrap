@@ -1,7 +1,7 @@
 .navbar-fixed{
     height: 100%;
     position: fixed;
-    overflow-y: auto;
+    overflow-x: auto;
 }
 .container{
     position: absolute;

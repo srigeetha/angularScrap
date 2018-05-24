@@ -1,3 +1,21 @@
 <p>
   display works!
 </p>
+<div >
+    <table>
+      <tr>
+        <th>uiserid</th>
+        <th>Id</th>
+        <th>Title first word</th>
+        <th>Title</th>
+        <th></th>
+      </tr>
+       <tr *ngFor="let hero of data ">
+     <td>{{ hero.userId }}</td> 
+     <td>{{ hero.id }}</td>
+     <td>{{ hero.title | uppercase | custompipe }}</td>
+     <td>{{ hero.title | lowercase }}</td>
+     <td>{{ hero.body }}</td>
+      </tr> 
+    </table>
+   </div>

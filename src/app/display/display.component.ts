@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../dataservices/dataservice.service';
 
 @Component({
   selector: 'app-display',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-
-  constructor() { }
-
+  data: any;
+  constructor(private ds: DataService) {
+    this.ds.getData().subscribe(result=>{
+       this.data = result;
+       console.log("in subscribe ", this.data); 
+    },err=>{
+      console.log("in subscribe ", err);
+    });
+   }
   ngOnInit() {
   }
 

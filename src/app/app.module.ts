@@ -23,8 +23,9 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
 import {UIRouterModule} from "@uirouter/angular";
 import { DataService } from './dataservices/dataservice.service';
-import { HttpClientModule, } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { PipeService } from './pipes/pipes.service';
 import {
   AccordionModule,
   BsDropdownModule, 
@@ -68,7 +69,8 @@ import { DisplayComponent } from './display/display.component';
     TooltipComponent,
     TypeaheadComponent,
     LoginComponent,
-    DisplayComponent
+    DisplayComponent,
+    PipeService
   ],
   imports: [
     BrowserModule,

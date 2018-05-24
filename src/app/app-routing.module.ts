@@ -19,12 +19,14 @@ import { TabsComponent } from './tabs/tabs.component';
 import { TimepickerComponent } from './timepicker/timepicker.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
   imports: [UIRouterModule.forRoot({
     states: [
       { name: "#", url: "/", component: LoginComponent },
       { name: "dashboard", url: "/dashboard", component: DashboardComponent },
+      { name: "dashboard.display", url: "/display", component: DisplayComponent },
       { name: "dashboard.accordion", url: "/accordion", component: AccordionComponent },
       { name: "dashboard.alert", url: "/alert", component: AlertComponent },
       { name: "dashboard.buttons", url: "/buttons", component: ButtonsComponent },

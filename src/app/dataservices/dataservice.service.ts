@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class DataService {
-  data: any[];
-  constructor(private http: Http) {
+
+  constructor(private http: HttpClient) {
     console.log("Dataservice constructor");
-    this.http.get("https://jsonplaceholder.typicode.com/posts").subscribe(result => {
-      console.log("in subscribe" + result);
-      console.log("in subscribe" + JSON.stringify(result));
-    },
-      err => {
-        console.log("Error is " + err)
-      })
+    
+  }
+  getData(){
+    return  this.http.get("https://jsonplaceholder.typicode.com/posts");
   }
 }
