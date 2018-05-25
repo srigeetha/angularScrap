@@ -11,7 +11,7 @@ export class DisplayComponent implements OnInit {
   constructor(private ds: DataService) {
     this.ds.getData().subscribe(result=>{
        this.data = result;
-       console.log("in subscribe ", this.data); 
+      // console.log("in subscribe ", this.data); 
     },err=>{
       console.log("in subscribe ", err);
     });

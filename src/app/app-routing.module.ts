@@ -20,6 +20,7 @@ import { TimepickerComponent } from './timepicker/timepicker.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
 import { DisplayComponent } from './display/display.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   imports: [UIRouterModule.forRoot({
@@ -44,6 +45,7 @@ import { DisplayComponent } from './display/display.component';
       { name: "dashboard.timepicker", url: "/timepicker", component: TimepickerComponent },
       { name: "dashboard.tooltip", url: "/tooltip", component: TooltipComponent },
       { name: "dashboard.typeahead", url: "/typeahead", component: TypeaheadComponent },
+      { name: "login", url: "/login", component: LoginComponent },
 
     ], useHash: false
   })],

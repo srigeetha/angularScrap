@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '@uirouter/core';
+import { PubService } from '../pubsub/displaypub.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,15 +8,14 @@ import { StateService } from '@uirouter/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public $state: StateService) {
-   
-   }
+  constructor(public $state: StateService,private ps:PubService) {  }
 
   handleClick() {
-    this.$state.go('dashboard.accordion');
+    this.$state.go('dashboard.display');
+    this.ps.pubLogin("isUserLoggedIn");
+   //console.log(this.ps.subLogin());
+  }
 
-  }
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

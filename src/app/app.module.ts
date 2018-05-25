@@ -46,7 +46,8 @@ import {
 } from 'ngx-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { DisplayComponent } from './display/display.component';
-
+import { MenuComponent } from './menu/menu.component';
+import { PubService  } from './pubsub/displaypub.service'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,8 @@ import { DisplayComponent } from './display/display.component';
     TypeaheadComponent,
     LoginComponent,
     DisplayComponent,
-    PipeService
+    PipeService,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +97,7 @@ import { DisplayComponent } from './display/display.component';
     HttpClientModule,
     HttpModule 
   ],
-  providers: [DataService],
+  providers: [DataService,PubService],
   bootstrap: [AppComponent],
 
 })

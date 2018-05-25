@@ -4,7 +4,7 @@ import { Pipe,PipeTransform } from '@angular/core';
 export class PipeService implements PipeTransform {
   transform(value: String): String {
     let valu:any = value.split(" ");
-    console.log("Pipe result"+valu[1]);
+    //console.log("Pipe result"+valu[1]);
     return valu[0];
   }
 }
