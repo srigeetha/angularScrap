@@ -11,4 +11,5 @@ export class DataService {
   getData(){
     return  this.http.get("https://jsonplaceholder.typicode.com/posts");
   }
+  
 }

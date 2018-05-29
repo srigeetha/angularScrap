@@ -8,13 +8,14 @@ import { PubService } from '../pubsub/displaypub.service';
 })
 export class MenuComponent implements OnInit {
   userLoggedin:boolean;
+  
   constructor(private ps:PubService) {
     this.updateNav();
+    this.menu();
   }
   
-  ngOnInit() {
-  }
-  
+  ngOnInit() {  }
+
   updateNav(){
     this.ps.subLogin().subscribe(result=>{
       console.log("menu component" , result);  
@@ -27,5 +28,17 @@ export class MenuComponent implements OnInit {
   err=>{
     console.log(" Error result is ", err )
   });
+  }
+  menu(){
+    if(localStorage.getItem("authtoken")){
+      console.log(localStorage.getItem("authtoken"));
+      this.userLoggedin=true;
+    }else{
+      this.userLoggedin=false;
+    }
+  }
+  handle(){
+    localStorage.removeItem("authtoken");
+    this.ps.pubLogin("loggedout");
   }
 }

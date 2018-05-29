@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '@uirouter/core';
 import { PubService } from '../pubsub/displaypub.service';
+import { DataService } from '../dataservices/dataservice.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,12 +9,19 @@ import { PubService } from '../pubsub/displaypub.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public $state: StateService,private ps:PubService) {  }
+  tok:string = "geetha123";
+  constructor(public $state: StateService,private ps:PubService,private ds:DataService) {  }
 
   handleClick() {
-    this.$state.go('dashboard.display');
-    this.ps.pubLogin("isUserLoggedIn");
-   //console.log(this.ps.subLogin());
+   
+    this.ds.getData().subscribe(result=>{
+      if(this.tok){
+        localStorage.setItem("authtoken", this.tok);
+        this.ps.pubLogin("isUserLoggedIn");
+        this.$state.go('dashboard.display');
+       }
+    },err=>{});
+    //console.log(this.ps.subLogin());
   }
 
   ngOnInit() { }

@@ -47,7 +47,8 @@ import {
 import { LoginComponent } from './login/login.component';
 import { DisplayComponent } from './display/display.component';
 import { MenuComponent } from './menu/menu.component';
-import { PubService  } from './pubsub/displaypub.service'; 
+import { PubService  } from './pubsub/displaypub.service';
+import { DropdownComponent } from './dropdown/dropdown.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +73,8 @@ import { PubService  } from './pubsub/displaypub.service';
     LoginComponent,
     DisplayComponent,
     PipeService,
-    MenuComponent
+    MenuComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
