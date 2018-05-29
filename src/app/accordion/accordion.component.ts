@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccordionComponent implements OnInit {
 
-  constructor() { }
+  countires:any;
+
+  recieved(msg:string){
+
+  }
+  constructor() { 
+    this.countires=[{name:"India",code:"In"},{name:"UnitedStates",code:"Us"}];
+  }
 
   ngOnInit() {
   }

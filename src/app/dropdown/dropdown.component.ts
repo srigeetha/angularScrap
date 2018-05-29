@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -7,10 +7,22 @@ import { Component, OnInit,Input,Output } from '@angular/core';
 })
 export class DropdownComponent implements OnInit {
 
+  selectedOption:any;
+  
   @Input()
   datalist:any;
 
-  constructor() { }
+  @Output()
+  message = new EventEmitter<string>();
+
+
+  constructor() { 
+
+  }
+
+  sendMessage(){
+    this.message.emit(this.selectedOption);
+  }
 
   ngOnInit() {
   } 
