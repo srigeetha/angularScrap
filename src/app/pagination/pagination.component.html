@@ -3,6 +3,8 @@
       <div class="content-wrapper">
         <p class="content-item" *ngFor="let content of returnedArray">{{content}}</p>
       </div>
-      <pagination [totalItems]="contentArray.length" (pageChanged)="pageChanged($event)"></pagination>
+      <pagination [totalItems]="contentArray.length" (pageChanged)="pageChanged($event)">
+        
+      </pagination>
     </div>
   </div>

@@ -12,9 +12,9 @@ export class SortableComponent implements OnInit {
     'Magneta',
     'Tornado'
   ];
- 
-  itemStringsRight = ['Mr. O', 'Tomato'];
   
+  itemStringsRight = ['Mr. O', 'Tomato'];
+
   constructor() { }
 
   ngOnInit() {

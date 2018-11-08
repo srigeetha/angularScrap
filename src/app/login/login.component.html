@@ -3,12 +3,14 @@
     Login page
   </div>
   <div class="card-body">
-    <form id="myForm">
+    <form [formGroup]="profileForm" class="form-group" (ngSubmit)="onSubmit()">
       <td>
         <tr>
           <th>EmailId:</th>
           <th>
-            <input name="myInput" [(ngModel)]="myInput" id="username">
+            <input type="text" class="form-control" formControlName='email'>
+            <div class="alert alert-danger" *ngIf="!profileForm.controls['email'].valid && profileForm.controls['email'].touched">
+              {{emailerr}}</div>
           </th>
         </tr>
         <tr>
@@ -20,7 +22,10 @@
         <tr>
           <th>Password:</th>
           <th>
-            <input type="password" name="pwd">
+            <input type="password" class="form-control" formControlName='pwd'>
+            <div class="alert alert-danger" *ngIf="!profileForm.controls['pwd'].valid 
+            && profileForm.controls['pwd'].dirty && profileForm.controls['email'].valid">
+              {{passerr}}</div>
           </th>
         </tr>
         <tr>
@@ -30,9 +35,12 @@
           </th>
         </tr>
         <tr>
-          <button class="btn btn-primary" (click)="handleClick()">Submit</button>
+          <button class="btn btn-primary" (click)="handleClick()" [disabled]="!profileForm.valid">Submit</button>
         </tr>
       </td>
     </form>
   </div>
 </div>
+<p>
+  Form Status: {{ profileForm.status }}
+</p>

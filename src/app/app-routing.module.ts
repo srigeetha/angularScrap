@@ -21,6 +21,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { TypeaheadComponent } from './typeahead/typeahead.component';
 import { DisplayComponent } from './display/display.component';
 import { MenuComponent } from './menu/menu.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   imports: [UIRouterModule.forRoot({
@@ -46,7 +48,8 @@ import { MenuComponent } from './menu/menu.component';
       { name: "dashboard.tooltip", url: "/tooltip", component: TooltipComponent },
       { name: "dashboard.typeahead", url: "/typeahead", component: TypeaheadComponent },
       { name: "login", url: "/login", component: LoginComponent },
-
+      { name: "child", url: "/child", component: ChildComponent },
+      { name: "parent", url: "/parent", component: ParentComponent },
     ], useHash: false
   })],
   exports: [UIRouterModule]

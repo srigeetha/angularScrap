@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -48,7 +48,9 @@ import { LoginComponent } from './login/login.component';
 import { DisplayComponent } from './display/display.component';
 import { MenuComponent } from './menu/menu.component';
 import { PubService  } from './pubsub/displaypub.service';
-import { DropdownComponent } from './dropdown/dropdown.component'; 
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +76,9 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     DisplayComponent,
     PipeService,
     MenuComponent,
-    DropdownComponent
+    DropdownComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
@@ -97,10 +101,10 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     TooltipModule.forRoot(),
     TypeaheadModule.forRoot(),
     HttpClientModule,
-    HttpModule 
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [DataService,PubService],
-  bootstrap: [AppComponent],
-
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

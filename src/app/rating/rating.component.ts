@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
@@ -20,10 +20,10 @@ export class RatingComponent implements OnInit {
  
   resetStar(): void {
     this.overStar = void 0;
-  }
+  } 
   constructor() { }
 
   ngOnInit() {
   }
-
+  
 }
